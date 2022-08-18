@@ -2,8 +2,8 @@ let start = 2;
 let end = 3;
 let apple = 1;
 let orange = 5;
-let apples = [2];
-let oranges = [-2];
+let apples1 = [2];
+let oranges1 = [-2];
 let result = [];
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
@@ -39,4 +39,4 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     return result
 }
 
-console.log(countApplesAndOranges(start, end, apple, orange, apples, oranges));
+console.log(countApplesAndOranges(start, end, apple, orange, apples1, oranges1));
