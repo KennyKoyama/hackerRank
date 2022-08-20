@@ -36,31 +36,23 @@ function separateNumbers(s) {
     let expected;
     let half = Math.round(s.length/2);
     for(let i = 1, sSize = s.length; i <= half; i++){
-          console.log(j)
-          console.log(i)
-        console.log(i+i)
         current = s.slice(0,i);
         result = current;
         expected = BigInt(current) + 1n;
         result += expected;
-         console.log(current)
-        console.log(expected)
 
         while(result.length < sSize){
             expected += 1n;
-            console.log(expected)
             result += expected;
-            console.log(result)
-
         }
-        
-             console.log(s)
-        console.log(result)
-            // 900 719 925 474 099 2
-        if (result === s) return 'YES' + ' ' + current;
+        if (result === s){
+            console.log('YES' + ' ' + current)
+            return
+        }
         if(j > (sSize/2)) break;
     }
-    return 'NO'
+    console.log('NO')
+    return
 }
 // console.log(separateNumbers(s1))
 // console.log(separateNumbers(s2))
