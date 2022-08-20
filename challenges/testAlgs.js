@@ -1,103 +1,76 @@
 /*
- * Complete the 'separateNumbers' function below.
+ * Complete the 'countSort' function below.
  *
- * The function accepts STRING s as parameter.
+ * The function accepts 2D_STRING_ARRAY arr as parameter.
  */
 
-let s1 = '1234';
-let s2 = '91011';
-let s3 = '99100';
-let s4 = '101103';
-let s5 = '010203';
-let s6 = '13';
-let s7 = '1';
+let arr1 = [
+    [0, 'ab'],
+    [6, 'cd'],
+    [0, 'ef'],
+    [6, 'gh'],
+    [4, 'ij'],
+    [0, 'ab'],
+    [6, 'cd'],
+    [0, 'ef'],
+    [6, 'gh'],
+    [0, 'ij'],
+    [4, 'that'],
+    [3, 'be'],
+    [0, 'to'],
+    [1, 'be'],
+    [5, 'question'],
+    [1, 'or'],
+    [2, 'not'],
+    [4, 'is'],
+    [2, 'to'],
+    [4, 'the']];
 
-let s8 = '99910001001';
-let s9 = '7891011';
-let s10 = '9899100';
-let s11 = '999100010001';
-
-let s12 = '90071992547409929007199254740993';
-let s13 = '45035996273704964503599627370497';
-let s14 = '22517998136852482251799813685249';
-let s15 = '11258999068426241125899906842625';
-let s16 = '562949953421312562949953421313';
-let s17 = '90071992547409928007199254740993';
-let s18 = '45035996273704963503599627370497';
-let s19 = '22517998136852481251799813685249';
-let s20 = '11258999068426240125899906842625';
-let s21 = '562949953421312462949953421313';
-
-function separateNumbers(s) {
-    // Write your code here
-    let result = '';
-    let j = 1;
-    let current;
-    let expected;
-    let half = Math.round(s.length/2);
-    for(let i = 1, sSize = s.length; i <= half; i++){
-          console.log(j)
-          console.log(i)
-        console.log(i+i)
-        current = s.slice(0,i);
-        result = current;
-        expected = BigInt(current) + 1n;
-        result += expected;
-         console.log(current)
-        console.log(expected)
-
-        while(result.length < sSize){
-            expected += 1n;
-            console.log(expected)
-            result += expected;
-            console.log(result)
-
-        }
-        
-             console.log(s)
-        console.log(result)
-            // 900 719 925 474 099 2
-        if (result === s) return 'YES' + ' ' + current;
-        if(j > (sSize/2)) break;
-    }
-    return 'NO'
-}
-// console.log(separateNumbers(s1))
-// console.log(separateNumbers(s2))
-// console.log(separateNumbers(s3))
-// console.log(separateNumbers(s4))
-// console.log(separateNumbers(s5))
-// console.log(separateNumbers(s6))
-// console.log(separateNumbers(s7))
-
-// console.log(separateNumbers(s8))
-// console.log(separateNumbers(s9))
-// console.log(separateNumbers(s10))
-// console.log(separateNumbers(s11))
-
-console.log(separateNumbers(s12))
-console.log(separateNumbers(s13))
-console.log(separateNumbers(s14))
-console.log(separateNumbers(s15))
-console.log(separateNumbers(s16))
-console.log(separateNumbers(s17))
-console.log(separateNumbers(s18))
-console.log(separateNumbers(s19))
-console.log(separateNumbers(s20))
-console.log(separateNumbers(s21))
-
-/*
-   '9 007 199 254 740 992
-    9 007 199 254 740 993'
-
-YES 9 007 199 254 740 992
-YES 4503599627370496
-YES 2251799813685248
-YES 1125899906842624
-YES 562949953421312
-NO
-NO
-NO
-NO
-NO
+/* sorted = [['-', '-', '-', '-', '-', 'to'],
+             ['be', 'or'],
+             ['not', 'to'],
+             ['be'],
+             ['-', 'that', 'is', 'the'],
+             ['question'],
+             ['-', '-', '-', '-'],
+             [],
+             [],
+             [],
+             []]
 */
+function countSort(arr) {
+    // Write your code here
+    let size = arr.length;
+    let half = size / 2;
+    let result = '';
+    let sub = [];
+    let sorted = [];
+    let max = 0;
+
+    // Convert first half to dash
+    for(let i = 0; i < size; i++){
+        if(i < half)arr[i][1] = '-';
+        sub.push(arr[i]);
+        console.log(arr[i])
+        max = max > arr[i][0] ? max : arr[i][0];
+    }
+    console.log(sub)
+    console.log(max)
+    for(let count = 0; count <= max; count++){
+        sorted.push([])
+    }
+
+    console.log(sorted)
+    // Sort elements
+    for(let j = 0; j < size; j++){
+        sorted[sub[j][0]].push(sub[j][1])
+    }
+    console.log(sorted)
+    console.log(sub)
+    
+    result = sorted.flat().join(' ');
+    console.log(result)
+    return result
+}
+
+console.log(countSort(arr1))
