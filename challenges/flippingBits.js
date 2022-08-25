@@ -11,18 +11,10 @@ let n3 = 9; // 4294967295
 
 function flippingBits(n) {
     // Write your code here
-    let result;
     let bits = n.toString(2).padStart(32, '0').split('');
-    console.log(bits)
+    let reverse = bits.map((bit) => bit === '0' ? '1' : '0');
+    let result = parseInt(reverse.join(''),2);
 
-    result = bits.map((bit, i, arr) => bit === '0' ? '1' : '0')
-
-    let test = parseInt(result.join(''),2);
-    
-    
-    console.log(test)
-    console.log(bits)
-    console.log(result)
     return result
 }
 
