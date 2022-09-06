@@ -1,34 +1,50 @@
 /*
- * Complete the 'superReducedString' function below.
+ * Complete the 'alternate' function below.
  *
- * The function is expected to return a STRING.
+ * The function is expected to return an INTEGER.
  * The function accepts STRING s as parameter.
  */
 
-function superReducedString(s) {
+let s1 = 'beabeefeab';
+let s2 = 'abaacdabd';
+let s3 = 'asdcbsdcagfsdbgdfanfghbsfdab';
+let s4 = 'asvkugfiugsalddlasguifgukvsa';
+let s5 = 'cwomzxmuelmangtosqkgfdqvkzdnxerhravxndvomhbokqmvsfcaddgxgwtpgpqrmeoxvkkjunkbjeyteccpugbkvhljxsshpoymkryydtmfhaogepvbwmypeiqumcibjskmsrpllgbvc';
+
+function alternate(s) {
     // Write your code here
-    let result = '';
+    let result = 0;
     let splited = s.split('');
     console.log(splited)
-    let size = splited.length;
-    for (let i = 0; i < size; i++){
-        let letterA = splited[i];
-        let letterB = splited[i+1];
-        // console.log(splited.length)
-
-        if(letterA === letterB){
-                splited.splice(i+1,1)
-                splited.splice(i,1)
-                i = -1;
-                size = splited.length;
-      
+    let lettersSet = [...new Set(splited)];
+    console.log(lettersSet)
+    let choices = [];
+    lettersSet.forEach((value,index) => {
+        for(let i = index + 1, setSize = lettersSet.length; i < setSize; i++){
+            choices.push([value, lettersSet[i]])
         }
-    };
-    result = splited.join('') || 'Empty String';
+    })
+    console.log(choices)
+    let hasSeq = (arr) => /(\w)\1/.test(arr);
+    let possibilities = [];
+    choices.forEach((choice) => {
+        let possible = splited.filter((letter) => choice.includes(letter));
+        if(!hasSeq([...possible].join(''))){
+            possibilities.push(possible);
+            result = result > possible.length ? result : possible.length;
+        };
+    })
+    console.log(possibilities)
     console.log(result)
     return result
 }
 
-// console.log(superReducedString('aaabccddd'))
-console.log(superReducedString('zztqooauhujtmxnsbzpykwlvpfyqijvdhuhiroodmuxiobyvwwxupqwydkpeebxmfvxhgicuzdealkgxlfmjiucasokrdznmtlwh'))
-// console.log(superReducedString('baab'))
+console.log(alternate(s1))
+// console.log('\n')
+// console.log(alternate(s2))
+// console.log('\n')
+// console.log(alternate(s3))
+// console.log('\n')
+// console.log(alternate(s4))
+// console.log('\n')
+// console.log(alternate(s5))
