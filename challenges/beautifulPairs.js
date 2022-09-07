@@ -9,7 +9,6 @@ function beautifulPairs(A, B) {
     A.forEach((numA, index) => {
         for(let bSize = B.length; i < bSize; i++){
             let numB = B[i];
-            // console.log(i)
             if(numA < numB) break;
             console.log(numA, numB)
             
