@@ -51,13 +51,26 @@ function gridSearch(G, P) {
     // console.log(rSize,cSize)
     for(let row = 0; row <= rSize - P.length; row++){
         let currentRow = G[row];
-        if(currentRow.includes(P[0])){
-            let colIndex = currentRow.indexOf(P[0], last);
-            for(let pRow = 0; pRow < P.length; pRow++){
-                
-                
+        // console.log(currentRow.includes(P[0]))
+            if(currentRow.includes(P[0])){
+                console.log(row)
+                console.log(currentRow.indexOf(P[0], last))
+                let colIndex = currentRow.indexOf(P[0], last);
+                for(let pRow = 0; pRow < P.length; pRow++){
+                    console.log(G[row+pRow].indexOf(P[pRow]))
+                    if(G[row+pRow].indexOf(P[pRow]) === colIndex){
+                        count++
+                        continue
+                    }
+                    
+                    console.log(count)
+                    count = 0;
+                    last = colIndex + 1;
+                    
+                    // break
+                    
+                }
             }
-        }
             console.log(P.length)
             if(count === P.length) return 'YES'
         console.log(count)
