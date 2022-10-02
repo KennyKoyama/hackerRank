@@ -1,29 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-body {
-    display: flex;
-    width: 100vh;
-    height: 100vh;
-    margin: auto;
-    outline: 1px solid blue;
-}
 #btns {
     width: 75%;
-    display: grid;
-    /* margin: auto; */
-    /* gap: 1px; */
-    grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: repeat(3, 1fr); */
-    /* align-content: center; */
-    /* justify-items: center; */
-    /* align-items: center; */
-    outline: 3px solid blue;
 }
 
 #btns button {
-    /* display: flex; */
     width: 30%;
     height: 48px;
     font-size: 24px;
@@ -31,67 +10,4 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid rgb(192, 191, 192);
-    outline: 3px solid blue;
 }
-
-/* #btn1 {
-    width: 30%;
-    height: 48px;
-    font-size: 24px;
-    align-self: flex-end;
-    justify-self: end;
-}
-#btn2 {
-    width: 30%;
-    height: 48px;
-    font-size: 24px;
-    align-self: flex-end;
-}
-#btn3 {
-    width: 30%;
-    height: 48px;
-    font-size: 24px;
-    align-self: flex-end;
-}
-#btn4 {
-    width: 30%;
-    height: 48px;
-    font-size: 24px;
-    align-self: flex-end;
-    justify-self: end;
-}
-#btn5 {
-    width: 30%;
-    height: 48px;
-    font-size: 24px;
-    align-self: flex-end;
-    justify-self: end;
-}
-#btn6 {
-    width: 30%;
-    height: 48px;
-    font-size: 24px;
-    align-self: flex-end;
-    justify-self: end;
-}
-#btn7 {
-    width: 30%;
-    height: 48px;
-    font-size: 24px;
-    align-self: flex-end;
-    justify-self: end;
-}
-#btn8 {
-    width: 30%;
-    height: 48px;
-    font-size: 24px;
-    align-self: flex-end;
-    justify-self: end;
-}
-#btn9 {
-    width: 30%;
-    height: 48px;
-    font-size: 24px;
-    align-self: flex-end;
-    justify-self: end;
-} */
