@@ -1,0 +1,13 @@
+#btns {
+    width: 75%;
+}
+
+#btns button {
+    width: 30%;
+    height: 48px;
+    font-size: 24px;
+    background-image: linear-gradient(0deg, rgb(247, 246, 246), rgb(230,230,230));
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(192, 191, 192);
+}
